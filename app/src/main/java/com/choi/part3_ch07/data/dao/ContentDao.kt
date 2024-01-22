@@ -1,6 +1,7 @@
 package com.choi.part3_ch07.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -16,5 +17,8 @@ interface ContentDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(item: ContentEntity)
+
+    @Delete
+    suspend fun delete(item: ContentEntity)
 
 }

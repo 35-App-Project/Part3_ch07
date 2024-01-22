@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.choi.part3_ch07"
         minSdk = 23
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -66,5 +66,6 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     kapt("androidx.room:room-compiler-processing:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    kapt("android.arch.persistence.room:compiler:1.1.1")
 
 }

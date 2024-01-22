@@ -1,4 +1,4 @@
-package com.choi.part3_ch07.data.di
+package com.choi.part3_ch07.di
 
 import android.content.Context
 import androidx.room.Room
@@ -16,8 +16,8 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun providesDataBase(@ApplicationContext context:Context) : AppDatabase {
-        return Room.databaseBuilder(context, AppDatabase::class.java, "chapter7.db")
+    fun providesDataBase(@ApplicationContext appContext:Context) : AppDatabase {
+        return Room.databaseBuilder(appContext, AppDatabase::class.java, "my.db")
             .fallbackToDestructiveMigration()
             .build()
     }

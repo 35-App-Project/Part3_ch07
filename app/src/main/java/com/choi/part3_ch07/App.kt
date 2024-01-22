@@ -5,6 +5,4 @@ import dagger.hilt.android.HiltAndroidApp
 
 // Hilt 설정을 위한 세팅
 @HiltAndroidApp
-class App : Application() {
-
-}
+class App : Application()

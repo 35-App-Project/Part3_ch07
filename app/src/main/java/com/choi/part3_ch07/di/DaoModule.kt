@@ -1,4 +1,4 @@
-package com.choi.part3_ch07.data.di
+package com.choi.part3_ch07.di
 
 import com.choi.part3_ch07.data.AppDatabase
 import dagger.Module
@@ -11,8 +11,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DaoModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun providesContentDao(appDatabase: AppDatabase) = appDatabase.contentDao()
 
 }

@@ -19,16 +19,26 @@ class InputViewModel @Inject constructor(
 
     // 입력이 완료 되었을 때 inputActivity를 닫기 위해 뷰모델에서 신호를 주기 위함
     private val _doneEvent = MutableLiveData<Unit>()
-    val doEvent : LiveData<Unit> = _doneEvent
+    val doEvent: LiveData<Unit> = _doneEvent
 
     var content = MutableLiveData<String>()
-    var memo=MutableLiveData<String?>()
+    var memo = MutableLiveData<String?>()
+
+    var item: ContentEntity? = null
+
+    fun initData(item: ContentEntity) {
+        this.item = item
+        content.value = item.content
+        memo.value = item.memo
+    }
 
     fun insertData() {
-        content.value?.let {content->
+        content.value?.let { content ->
             viewModelScope.launch(Dispatchers.IO) {
                 contentRepository.insert(
-                    ContentEntity(content=content, memo=memo.value)
+                    item?.copy(
+                        content = content, memo = memo.value
+                    ) ?: ContentEntity(content = content, memo = memo.value)
                 )
                 // postValue 로 main 스레드에 던져주기 위해
                 _doneEvent.postValue(Unit)

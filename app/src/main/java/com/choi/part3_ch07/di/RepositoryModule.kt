@@ -1,4 +1,4 @@
-package com.choi.part3_ch07.data.di
+package com.choi.part3_ch07.di
 
 import com.choi.part3_ch07.data.dao.ContentDao
 import com.choi.part3_ch07.repository.ContentRepository

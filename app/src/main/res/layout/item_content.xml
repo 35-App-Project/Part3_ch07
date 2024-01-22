@@ -6,6 +6,10 @@
         <variable
             name="item"
             type="com.choi.part3_ch07.model.ContentEntity" />
+        
+        <variable
+            name="handler"
+            type="com.choi.part3_ch07.MainActivity.Handler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,6 +17,8 @@
         android:layout_height="wrap_content"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:onClick="@{()->handler.onClickItem(item)}"
+        android:onLongClickListener="@{()->handler.onLongClickItem(item)}"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -22,6 +28,7 @@
             android:layout_height="wrap_content"
             android:checked="@{item.done}"
             android:text="@{item.content}"
+            android:onCheckedChanged="@{(button,check)->handler.onCheckedItem(item)}"
             android:textStyle="bold"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
