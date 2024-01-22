@@ -22,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 키보드 이동에 따라 하단의 버튼이 맞춰 올라갈 수 있게 -> softInputMode : Resize -->
+        <activity android:name="com.choi.part3_ch07.InputActivity"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>
