@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+// Input Activity 의 UI State 를 관리 하기 위한 ViewModel
 @HiltViewModel
 class InputViewModel @Inject constructor(
     private val contentRepository: ContentRepository

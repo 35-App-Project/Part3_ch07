@@ -34,7 +34,6 @@ class ListAdapter : ListAdapter<ContentEntity, ContentViewHolder>(diffCallBack) 
             ): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
 }

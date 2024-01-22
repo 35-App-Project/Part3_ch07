@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
+// 테이블 형태
 @Entity(tableName = "Content")
 data class ContentEntity(
     @PrimaryKey(true)

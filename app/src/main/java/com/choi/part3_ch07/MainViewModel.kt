@@ -13,11 +13,11 @@ class MainViewModel @Inject constructor(private val contentRepository: ContentRe
     ViewModel() {
 
     // 지속적 구독
-    val  contentList= contentRepository.loadList()
-            .stateIn(
-                initialValue = emptyList(),
-                started = SharingStarted.WhileSubscribed(5000),
-                scope = viewModelScope
-            )
+    val contentList = contentRepository.loadList()
+        .stateIn(
+            initialValue = emptyList(),
+            started = SharingStarted.WhileSubscribed(5000),
+            scope = viewModelScope
+        )
 
 }

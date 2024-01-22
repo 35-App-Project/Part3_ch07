@@ -24,7 +24,7 @@ class InputActivity : AppCompatActivity() {
         /* 액션 바의 뒤로 가기 버튼 보임 */
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // post 되면 이 부분이 호출 되고 finish() 를 통해 앱이 꺼진다
+        // post 되면 이 부분이 호출 되고 finish() 를 통해 앱이 꺼진다 (옵저버로 관찰)
         viewModel.doEvent.observe(this) {
             Toast.makeText(this,"완료",Toast.LENGTH_SHORT)
                 .show()
@@ -32,6 +32,7 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
+    // HomeAsUp 눌렸을 때 이벤트
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true

@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
             view = this@MainActivity
+
+            // 리사이클러 뷰 연결
             recyclerView.adapter = adapter
             val decoration = DividerItemDecoration(this@MainActivity, LinearLayout.VERTICAL)
             recyclerView.addItemDecoration(decoration)

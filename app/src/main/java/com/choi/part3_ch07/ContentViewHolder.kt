@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.choi.part3_ch07.databinding.ItemContentBinding
 import com.choi.part3_ch07.model.ContentEntity
 
+// RecyclerView 뷰 홀더
 class ContentViewHolder(private val binding: ItemContentBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
