@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.choi.part3_ch07"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -51,7 +51,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // ViewModel 편하게 사용하기 위함
+    // ViewModel 편하게 사용 하기 위함
     implementation("androidx.activity:activity-ktx:1.8.2")
 
     // Coroutine
@@ -64,8 +64,15 @@ dependencies {
     // Room DB
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
-    kapt("androidx.room:room-compiler-processing:2.6.1")
+    /*
+     gradle 에 이것을 추가 했더니 DB 가 생성되지 않았다
+     kapt("androidx.room:room-compiler-processing:2.6.1")
+     */
+    kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    kapt("android.arch.persistence.room:compiler:1.1.1")
 
+}
+
+kapt {
+    correctErrorTypes=true
 }

@@ -48,7 +48,7 @@
 
         <!-- 키보드 확인 누르면 내려감  : imeOptions -->
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/memoTextInputEditText"
+            android:id="@+id/memoEdit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="메모"
@@ -68,9 +68,9 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:enabled="@{!viewModel.content.empty}"
             android:onClick="@{()->viewModel.insertData()}"
-            android:paddingBottom="8dp"
             android:text="입력 완료"/>
 
 

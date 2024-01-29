@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="view"
             type="com.choi.part3_ch07.MainActivity" />
