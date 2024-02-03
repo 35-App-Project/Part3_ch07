@@ -15,7 +15,7 @@ class ContentViewHolder(private val binding: ItemContentBinding,
         binding.handler=handler
 
         binding.contentCheckBox.paintFlags = if (item.isDone) {
-            binding.contentCheckBox.paintFlags + Paint.STRIKE_THRU_TEXT_FLAG
+            Paint.STRIKE_THRU_TEXT_FLAG //+binding.contentCheckBox.paintFlags
         } else {
             0
         }

@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="@dimen/padding">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/contentTextInputLayout"
@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="할 일"
+                android:textAppearance="@style/TextAppearance.App.Large"
                 android:text="@={viewModel.content}"
                 android:inputType="textMultiLine">
                 <!-- 처음 진입 했을 때 포커스 주는 방법 -->
@@ -41,7 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/contentTextInputLayout">
@@ -51,6 +52,7 @@
             android:id="@+id/memoEdit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textAppearance="@style/TextAppearance.App.Large"
             android:hint="메모"
             android:text="@={viewModel.memo}"
             android:imeOptions="actionDone"
@@ -65,10 +67,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingStart="@dimen/padding"
+            android:paddingEnd="@dimen/padding"
+            android:textAppearance="@style/TextAppearance.App.Large.Bold"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
             android:enabled="@{!viewModel.content.empty}"
             android:onClick="@{()->viewModel.insertData()}"
             android:text="입력 완료"/>

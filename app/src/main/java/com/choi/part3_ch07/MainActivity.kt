@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                     adapter.submitList(it)
                 }
         }
-
     }
 
     fun onClickAdd() {
@@ -57,8 +56,8 @@ class MainActivity : AppCompatActivity() {
             InputActivity.start(this@MainActivity, item)
         }
 
-        fun onCheckedItem(item: ContentEntity) {
-            viewModel.updateItem(item.copy(isDone = !item.isDone))
+        fun onCheckedItem(item: ContentEntity,check: Boolean) {
+            viewModel.updateItem(item.copy(isDone = check))
         }
 
         fun onLongClickItem(item: ContentEntity): Boolean {
